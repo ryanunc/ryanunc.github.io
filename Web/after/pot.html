@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Factory Welcome</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #D8BFD8;
+      overflow: hidden;
+    }
+
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    h1, h3 {
+      opacity: 0; 
+      animation: fadeIn 2s ease forwards; 
+    }
+
+    h1 {
+      position: absolute;
+      top: 10%; 
+      width: 100%;
+      text-align: center;
+      font-size: 64px;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      margin: 0;
+      animation-delay: 1s; 
+    }
+
+    h3 {
+      position: absolute;
+      top: 20%; 
+      width: 100%;
+      text-align: center;
+      font-size: 32px; 
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      margin: 0;
+      animation-delay: 6s; 
+    }
+
+    .gif-container {
+      width: 60%; 
+      height: 60%; 
+      position: absolute;
+      top: 35%; 
+      left: 50%;
+      transform: translateX(-50%) scale(0); 
+      z-index: 1;
+      animation: popUp 3.5s ease forwards; 
+      animation-delay: 0.5s; 
+    }
+
+    .gif-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; 
+    }
+
+
+    .continue-btn {
+      position: absolute;
+      bottom: 60%; 
+      left: 45%;
+      padding: 15px 30px;
+      font-size: 1.5em;
+      color: white;
+      background-color: #f39c12;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s ease;
+      opacity: 0; 
+      animation: fadeIn 1.5s ease forwards; 
+      animation-delay: 8s; 
+    }
+
+    .continue-btn:hover {
+      background-color: #e67e22; 
+    }
+
+  </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="../audio/pot.mp3" type="audio/mpeg">
+    </audio>
+    
+  <h1>Hi, I am Dream Pot!</h1>
+  <h3>Now, I will give you some choices and create a dream based on your answers!</h3>
+
+  <div class="gif-container">
+    <img src="../image/pot1.gif" alt="pot GIF">
+  </div>
+
+
+  <a href="../time/time.html">
+    <button class="continue-btn">Continue</button>
+  </a>
+
+</body>
+</html>

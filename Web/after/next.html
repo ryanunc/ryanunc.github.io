@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Maker - The Choice</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #1a1a2e;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInText 15s ease-in-out forwards; 
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .option-btn {
+      padding: 15px 30px;
+      background-color: #f39c12;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: fadeInText 15s ease-in-out forwards; 
+    }
+
+    .option-btn:hover {
+      background-color: #d35400;
+      transform: scale(1.05);
+    }
+
+    .option-btn-secondary {
+      background-color: #555;
+    }
+
+    .option-btn-secondary:hover {
+      background-color: #777;
+    }
+
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="../audio/dark.mp3" type="audio/mpeg">
+      </audio>
+
+  <p>Today, something strange happened on my way to work. I met an old man, and he told me that I would never have to face those nightmares again. He said, "There’s a factory in the sky that creates dreams. You can go there and customize your dream." </p>
+  <p>Should I Go?</p>
+
+  <div class="options">
+    <a href="factory.html" class="option-btn">Yes, take me to the factory</a>
+    <a href="no.html" class="option-btn option-btn-secondary">No, I'll stay here</a>
+  </div>
+
+</body>
+</html>
