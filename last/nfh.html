@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Factory Welcome</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #D8BFD8;
+      overflow: hidden;
+    }
+
+    /* 动画定义 */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+
+    h1, h3 {
+      opacity: 0; /* 初始透明 */
+      animation: fadeIn 2s ease forwards; /* 逐渐显现 */
+    }
+
+    h1 {
+      position: absolute;
+      top: 10%; /* 调整标题的位置 */
+      width: 100%;
+      text-align: center;
+      font-size: 64px;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      margin: 0;
+      animation-delay: 1s; /* 延迟1秒后出现 */
+    }
+
+    h3 {
+      position: absolute;
+      top: 20%; /* 紧贴 h1  */
+      width: 100%;
+      text-align: center;
+      font-size: 32px; /* 根据需要调整大小 */
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      margin: 0;
+      animation-delay: 6s; /* 延迟2秒后出现 */
+    }
+
+    .gif-container {
+      width: 60%; /* 调整GIF容器的宽度 */
+      height: 60%; /* 调整GIF容器的高度 */
+      position: absolute;
+      top: 35%; /* 调整GIF的位置 */
+      left: 50%;
+      z-index: 1;
+
+    }
+
+    .gif-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* 让GIF按照原始比例缩放 */
+    }
+
+    /* 按钮样式 */
+    .options {
+      position: absolute;
+      bottom: 60%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 3;
+      gap: 20px;
+      opacity: 0; /* Initial opacity for animation */
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 7.5s; /* Delay to sync with the other elements */
+    }
+
+    .option-btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #f39c12;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .option-btn:hover {
+      background-color: #e67e22; /* 悬停效果 */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+  </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="../audio/last1.mp3" type="audio/mpeg">
+    </audio>
+    
+  <h1>Interesting...</h1>
+  <h3> Nighttime, in the forest, with others? 
+    <br>
+    <br>Could it be a cozy campfire gathering?</h3>
+  
+  <div class="gif-container">
+    <img src="../image/pot2.gif" alt="pot GIF">
+  </div>
+
+  <!-- 选项按钮 -->
+  <div class="options">
+    <a href="../ending/nfh.html">
+      <button class="option-btn">Continue</button>
+
+  </div>
+
+</body>
+</html>
