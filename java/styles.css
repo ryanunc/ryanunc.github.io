@@ -1,0 +1,99 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.calendar-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+p#countdown {
+    font-size: 1.5em;
+    color: #ff4500;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-gap: 10px;
+}
+
+.day-header, .day {
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.day:hover {
+    transform: scale(1.1);
+}
+
+.holiday {
+    background-color: #ffd700;
+    cursor: pointer;
+    position: relative;
+}
+
+.holiday:hover {
+    background-color: #ff4500;
+}
+
+#halloween {
+    background-color: #ff4500; 
+    color: white; 
+}
+
+
+.weekend {
+    background-color: #b0c4de;
+    cursor: pointer;
+}
+
+
+.falling-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.falling-object {
+    position: absolute;
+    top: -50px;
+    font-size: 40px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}

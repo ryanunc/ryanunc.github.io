@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>October Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <h1>October Calendar </h1>
+        <p id="countdown"></p> 
+        <div class="calendar">
+            <div class="day-header">Sun</div>
+            <div class="day-header">Mon</div>
+            <div class="day-header">Tue</div>
+            <div class="day-header">Wed</div>
+            <div class="day-header">Thu</div>
+            <div class="day-header">Fri</div>
+            <div class="day-header">Sat</div>
+            <div class="day"></div> 
+            <div class="day"></div> 
+            <div class="day">1</div> 
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day weekend" id="weekend3">5</div>
+            <div class="day weekend" id="weekend4">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day weekend" id="weekend5">12</div>
+            <div class="day weekend" id="weekend6">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day holiday" id="fall-break-1">17</div>
+            <div class="day holiday" id="fall-break-2">18</div>
+            <div class="day weekend" id="weekend7">19</div>
+            <div class="day weekend" id="weekend8">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day weekend" id="weekend9">26</div>
+            <div class="day weekend" id="weekend10">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+            <div class="day holiday2" id="halloween">31</div>
+        </div>
+    </div>
+
+    
+    <script>
+        
+        const today = new Date();
+
+      
+function countdownToWinterBreak() {
+    const winterBreakDate = new Date(today.getFullYear(), 11, 15); 
+    setInterval(function () {
+        const now = new Date();
+        const diff = winterBreakDate - now;
+        const daysLeft = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hoursLeft = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesLeft = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secondsLeft = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown').textContent = `Winter Break is in ${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, and ${secondsLeft} seconds!`;
+    }, 1000);
+}
+
+countdownToWinterBreak();
+
+
+        document.getElementById('fall-break-1').addEventListener('click', function() {
+            showFallingObjects('🍂');
+            alert("Happy Fall Break! Enjoy your time off!");
+        });
+
+        document.getElementById('fall-break-2').addEventListener('click', function() {
+            showFallingObjects('🍂');
+            alert("Fall Break Continues! Enjoy your day!");
+        });
+
+
+        document.getElementById('halloween').addEventListener('click', function() {
+            showFallingObjects('🎃');
+            alert("Happy Halloween! Enjoy the pumpkins!");
+        });
+
+
+        const weekends = document.querySelectorAll('.weekend');
+        weekends.forEach(weekend => {
+            weekend.addEventListener('click', function() {
+                showFallingObjects('🎉');
+                alert("It's Weekends!!");
+            });
+        });
+
+
+        function showFallingObjects(object) {
+            let container = document.createElement('div');
+            container.classList.add('falling-container');
+            document.body.appendChild(container);
+            
+            for (let i = 0; i < 30; i++) {
+                let fallingObject = document.createElement('div');
+                fallingObject.textContent = object;
+                fallingObject.classList.add('falling-object');
+                fallingObject.style.left = Math.random() * 100 + 'vw';
+                fallingObject.style.animationDuration = Math.random() * 3 + 2 + 's';
+                container.appendChild(fallingObject);
+            }
+
+            setTimeout(() => {
+                container.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
