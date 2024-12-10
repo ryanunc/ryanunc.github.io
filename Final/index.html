@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Chengdu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Knewave&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+    
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Travel Chengdu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pandas">Pandas</a></li>
+            <li><a href="#faq-map">FAQ</a></li> &nbsp;&nbsp;&nbsp;
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            &nbsp;&nbsp;&nbsp; <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            &nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            &nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+      
+    </nav>
+
+  
+    <div id="home" class="video-section">
+        <video autoplay muted loop id="myVideo">
+            <source src="film/panda.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h1>CHENG DU</h1>
+        </div>
+        <div class="vertical-text">
+            <span>成</span><br>
+            <span>都</span>
+        </div>
+    </div>
+
+    <section class="flight-search-section">
+        <h2 class="section-title">Plan Your Trip Now to the World of Pandas</h2>
+        <div class="flight-search-bar">
+            <div class="input-group">
+                <label for="departure">Departure</label>
+                <input type="text" id="departure" placeholder="Enter departure city">
+                <ul id="departure-suggestions" class="suggestions"></ul>
+            </div>
+            <div class="input-group">
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" placeholder="Enter destination city">
+                <ul id="destination-suggestions" class="suggestions"></ul>
+            </div>
+            <div class="input-group">
+                <label for="departure-date">Departure Date</label>
+                <input type="date" id="departure-date">
+            </div>
+            <div class="input-group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date">
+            </div>
+            <button type="button" class="search-button">Search</button>
+        </div>
+    </section>
+
+
+
+ 
+
+
+    <section id="city-center" class="city-center-section">
+        <video autoplay muted loop id="cityCenterVideo">
+            <source src="film/(73).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-bg-box">
+            <h1>Chengdu City </h1>
+            <p>
+                Located in the fertile Sichuan Basin, Chengdu is surrounded by mountains and rivers, offering a perfect balance between urban development and natural beauty.
+            </p>
+            <a href="https://chengdu-expat.com/places/chengdu-339-tv-tower/" class="cta-button">Discover More</a>
+        </div>
+    </section>
+
+
+    <section class="highlight-sections">
+        <div class="highlight-text">
+            <p>About Chengdu</p>
+        </div>
+    </section>
+
+
+    
+
+    
+    
+
+    <section id="about" class="modern-section">
+    
+        <div class="card" id="adventure">
+            <div class="card-image" style="background-image: url('image/mountain.avif');"></div>
+            <div class="card-content">
+                <h2>Adventure</h2>
+                <p>
+                    Chengdu is the perfect destination for adventure seekers. Explore the scenic trails of Qingcheng Mountain or enjoy rafting 
+                    on the Minjiang River. Whether you love hiking, climbing, or just immersing yourself in nature, Chengdu offers endless opportunities.
+                </p>
+            </div>
+        </div>
+    
+      
+        <div class="card" id="cuisine">
+            <div class="card-image" style="background-image: url('image/chili.webp');"></div>
+            <div class="card-content">
+                <h2>Cuisine</h2>
+                <p>
+                    Chengdu is the heart of Sichuan cuisine. From the spicy kick of hot pot to the comforting flavors of Dan Dan Noodles, 
+                    every meal here is a feast for your taste buds. Don’t miss the bustling food markets and traditional tea houses.
+                </p>
+            </div>
+        </div>
+    
+       
+        <div class="card" id="history">
+            <div class="card-image" style="background-image: url('image/bridge.jpg');"></div>
+            <div class="card-content">
+                <h2>History</h2>
+                <p>
+                    With over 2,300 years of history, Chengdu is a treasure trove of cultural heritage. Visit the Wuhou Shrine, 
+                    the ancient Dujiangyan Irrigation System, or the Jinsha Site Museum to discover the city’s fascinating past.
+                </p>
+            </div>
+        </div>
+    
+      
+        <div class="card" id="festivals">
+            <div class="card-image" style="background-image: url('image/festival.jpg');"></div>
+            <div class="card-content">
+                <h2>Festivals</h2>
+                <p>
+                    Chengdu’s festivals are a vibrant celebration of its culture. From the glowing Lantern Festival to the lively Dragon Boat Festival, 
+                    each event is a chance to experience the city’s traditions and enjoy its joyful atmosphere.
+                </p>
+            </div>
+        </div>
+    
+        <div class="card" id="relaxation">
+            <div class="card-image" style="background-image: url('image/tea.jpeg');"></div>
+            <div class="card-content">
+                <h2>Relaxation</h2>
+                <p>
+                    Discover Chengdu’s tranquil side with serene teahouses and traditional hot springs. Unwind at People’s Park while sipping tea 
+                    brewed the Sichuan way or enjoy a soothing spa day surrounded by lush bamboo forests. 
+                </p>
+            </div>
+        </div>
+        
+    
+       
+        <div class="card" id="shopping">
+            <div class="card-image" style="background-image: url('image/city.jpg');"></div>
+            <div class="card-content">
+                <h2>Shopping</h2>
+                <p>
+                    Chengdu offers a mix of traditional and modern shopping experiences. Wander through lively street markets for unique handmade crafts 
+                    or visit luxury malls like IFS to find high-end fashion. Shopping here is as diverse as the city itself.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="highlight-section">
+        <div class="highlight-text">
+            <p>And The Most Exciting Thing Is...</p>
+        </div>
+    </section>
+    
+    <section  id="pandas" class="panda-video-section">
+        <video autoplay muted loop id="pandaVideo">
+            <source src="film/panda1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="panda-overlay-title">
+            <h1>Chengdu Has <br> Over 180 Pandas!</h1>
+        </div>
+        <div class="panda-overlay-description">
+            <p>
+                Visit the Chengdu Research Base of Giant Panda Breeding, 
+                where conservation meets adorable panda families.
+            </p>
+            <a href="https://www.panda.org.cn/" target="_blank" class="cta-button">Purchase Tickets Now</a>
+        </div>
+        
+    </section>
+    
+ 
+    <section id="faq-map" class="map-faq-section">
+        <div class="map-container">
+            <h2>Looking for Something in Chengdu?</h2>
+            <div id="map"></div>
+        </div>
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">Do I need a visa to visit Chengdu?</button>
+                <div class="faq-answer">
+                    <p>Yes, most travelers need a Chinese tourist visa (L visa) to visit Chengdu. However, some countries are eligible for visa-free transit for up to 144 hours.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do I need to prepare some cash?</button>
+                <div class="faq-answer">
+                    <p>Alipay and WeChat Pay are widely accepted in Chengdu, even for small vendors. You may need to link a Chinese bank account for full functionality.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Are English signs and services available in Chengdu?</button>
+                <div class="faq-answer">
+                    <p>Major tourist areas, hotels, and airports have English signs. However, in local areas, basic Mandarin or translation apps may be needed.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is Chengdu famous for?</button>
+                <div class="faq-answer">
+                    <p>Chengdu is known for its giant pandas, delicious Sichuan cuisine, and vibrant cultural heritage.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is the best time to visit Chengdu?</button>
+                <div class="faq-answer">
+                    <p>The best time to visit Chengdu is from March to June and September to November when the weather is mild and pleasant.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How spicy is Sichuan cuisine?</button>
+                <div class="faq-answer">
+                    <p>Sichuan cuisine is famous for its bold flavors, especially the numbing spiciness from Sichuan peppercorns. But you can always ask for less spicy options!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I visit Chengdu Panda Base with children?</button>
+                <div class="faq-answer">
+                    <p>Yes, Chengdu Panda Base is family-friendly with plenty of space for kids to enjoy. It’s an educational and fun experience for all ages.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What transportation options are available in Chengdu?</button>
+                <div class="faq-answer">
+                    <p>Chengdu has an excellent metro system, affordable taxis, and bike-sharing services like Mobike. It’s easy to explore the city conveniently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <footer class="footer-section">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h3>Chengdu Tourism</h3>
+                <p>Discover the charm of Chengdu, where history, culture, and pandas come together to create unforgettable memories.</p>
+            </div>
+    
+    
+            <div class="footer-social">
+                <h3>Stay Connected</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    <br> <br>
+
+    <section class="four-images-section">
+        <div class="image-item" style="background-image: url('image/nature.avif');">
+            <div class="hover-text">
+               
+                <p>Explore the breathtaking natural beauty of Qingcheng Mountain and Dujiangyan.</p>
+            </div>
+        </div>
+        <div class="image-item" style="background-image: url('image/culture.webp');">
+            <div class="hover-text">
+              
+                <p>Discover Chengdu's rich cultural heritage, from Sichuan Opera to ancient temples.</p>
+            </div>
+        </div>
+        <div class="image-item" style="background-image: url('image/food.jpg');">
+            <div class="hover-text">
+               
+                <p>Indulge in world-famous Sichuan cuisine, including hot pot, dumplings, and street food.</p>
+            </div>
+        </div>
+        <div class="image-item" style="background-image: url('image/shopping.webp');">
+            <div class="hover-text">
+               
+                <p>Experience the vibrant urban life of Chengdu, from IFS Panda to Chunxi Road.</p>
+            </div>
+        </div>
+    </section>
+  
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ryan Deng Chengdu Tourism. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
